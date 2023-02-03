@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head><h1>
+ART AWARDS</h1>
+    </head>
+    <body>
+    <a href="polls">vote</a>  
+     <ul>
+       {%for question in Question%}
+        <h2><li>
+         {{question.question_text}}
+         </li></h2>
+         
+         {%for choice in Choice%}
+         {%if choice.question.id == question.id %}
+         <li>
+            {{choice.Choice_text}} {{choice.votes}}
+         </li>
+         {%endif%}
+        {%endfor%}
+         {%endfor%}
+     </ul>
+    </body>
+</html>
